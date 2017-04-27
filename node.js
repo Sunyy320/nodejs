@@ -11,12 +11,14 @@ var connectHandler=function connected(){
 	eventEmitter.emit("data_received");
 }
 
+// 使用匿名函数绑定事件处理程序
 eventEmitter.on('data_received',function(){
 	console.log('数据接受成功');
 });
 
 //触发connection事件
 eventEmitter.emit('connection');
+
 //绑定connection事件处理程序
 eventEmitter.on('connection',connectHandler);
 
